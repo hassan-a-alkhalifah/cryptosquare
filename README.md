@@ -21,3 +21,27 @@
     * Input Example: 2,000
     * Output Example:  MM -->
           <!-- SOLUTION: number-type input disallows commas-->
+
+
+
+0387
+3 8 7
+3 8 VII
+3 LXXX VII
+CC LXXX VII
+--- (no C)
+concat CCLXXXVII
+
+if rightposition = ___ -->
+
+function(digit, place) {
+  if digit === 9
+    show place3 [0] + place3 [2]
+  if digit between 5-8
+    show place3 [1] + place3 [0]x(digit-5)
+  if digit === 4
+    show place 3 [0] + place3 [1]
+  if digit 0-3 place3 [0]x(digit)
+}
+
+9
