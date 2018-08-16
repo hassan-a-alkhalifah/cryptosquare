@@ -22,7 +22,7 @@ var translateDigit = function(digit, place) {
     }
     return place[1] + counter;
   } else {
-    return ""
+    return "";
   }
 };
 
@@ -32,15 +32,18 @@ var romanNumerals = ["I", "V", "X", "L", "C", "D", "M"];
 $(document).ready(function() {
   $("#form").submit(function(event) {
     event.preventDefault();
-    var number = $("#userInput").val().split("").reverse();
+    var number = parseInt($("#userInput").val());
+    console.log(number);
+    var numberString= number.toString().split("").reverse();
     $("#errorDisplay").text("");
+    $("#message").text("");
     if(number > 3999 || number < 0) {
       $("#errorDisplay").text("Please enter a positive number below 4,000.");
     } else {
-      var onePlace = translateDigit(number[0], numberPlace1);
-      var tenPlace = translateDigit(number[1], numberPlace10);
-      var hundredPlace = translateDigit(number[2], numberPlace100);
-      var thousandPlace = translateDigit(number[3], numberPlace1000);
+      var onePlace = translateDigit(numberString[0], numberPlace1);
+      var tenPlace = translateDigit(numberString[1], numberPlace10);
+      var hundredPlace = translateDigit(numberString[2], numberPlace100);
+      var thousandPlace = translateDigit(numberString[3], numberPlace1000);
         // console.log(finalNumber);
         $("#message").text(thousandPlace + hundredPlace + tenPlace + onePlace);
       }
