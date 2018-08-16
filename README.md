@@ -20,7 +20,7 @@
 <!-- * The program knows how to read commas in legitimate numbers.
     * Input Example: 2,000
     * Output Example:  MM -->
-          <!-- SOLUTION: number-type input disallows commas-->
+          <!-- SOLUTION: number-type input disallows commas -->
 
 
 

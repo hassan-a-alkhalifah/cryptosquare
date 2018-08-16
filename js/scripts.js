@@ -22,19 +22,11 @@ var translateDigit = function(digit, place) {
     }
     return place[1] + counter;
   } else {
-    alert("Error");
+    return ""
   }
 };
 
-
-//   if digit between 5-8
-//     digit place3 [1] + place3 [0]x(digit-5)
-//   if digit 0-3 place3 [0]x(digit)
-// }
-
-
 //User Interface
-
 var romanNumerals = ["I", "V", "X", "L", "C", "D", "M"];
 
 $(document).ready(function() {
@@ -45,12 +37,13 @@ $(document).ready(function() {
     if(number > 3999 || number < 0) {
       $("#errorDisplay").text("Please enter a positive number below 4,000.");
     } else {
-      for(var i = 0; i < number.length; i++) {
-        var finalNumber = translateDigit(number[i], numberPlace1);
-        console.log(finalNumber);
-        $("#message").text(finalNumber);
+      var onePlace = translateDigit(number[0], numberPlace1);
+      var tenPlace = translateDigit(number[1], numberPlace10);
+      var hundredPlace = translateDigit(number[2], numberPlace100);
+      var thousandPlace = translateDigit(number[3], numberPlace1000);
+        // console.log(finalNumber);
+        $("#message").text(thousandPlace + hundredPlace + tenPlace + onePlace);
       }
-    }
     // console.log(number);
   });
 });
